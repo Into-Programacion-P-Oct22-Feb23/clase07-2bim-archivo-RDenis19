@@ -13,41 +13,15 @@ import java.util.Scanner;
  *
  * @author reroes
  */
-public class ArrayList01 {
+public class ArrayList011 {
 
     public static void main(String[] args) {
+        ArrayList<String> arreglo2 = obtenerDatos();
+        String cadenaFinal = obtenerCadenaFinal(arreglo2);
+        System.out.printf("%s\n", cadenaFinal);
+    }
 
-        // creación de un ArrayList
-        /*ArrayList<Integer> arreglo = new ArrayList<>();
-
-        arreglo.add(10);
-        arreglo.add(20);
-        arreglo.add(30);
-        arreglo.add(40);
-        arreglo.add(50);
-        arreglo.add(60);
-        arreglo.add(1000);
-        arreglo.add(2000);
-        arreglo.add(3000);
-
-        for (int i = 0; i < arreglo.size(); i++) {
-            System.out.println(arreglo.get(i));
-        }
-
-        System.out.println("----------------------------------");
-
-        ArrayList<Double> arreglo3 = new ArrayList<>();
-
-        arreglo3.add(10.2);
-        arreglo3.add(11.2);
-        arreglo3.add(12.2);
-        arreglo3.add(13.2);
-
-        for (int i = 0; i < arreglo3.size(); i++) {
-            System.out.println(arreglo3.get(i));
-        }
-
-        System.out.println("----------------------------------");*/
+    public static ArrayList<String> obtenerDatos() {
         ArrayList<String> arreglo2 = new ArrayList<>();
         Scanner entrada = new Scanner(System.in);
         String pais;
@@ -62,23 +36,49 @@ public class ArrayList01 {
             if (opcion.equals("s")) {
                 bandera = false;
             }
-                
+
+        }
+        return arreglo2;
+
+    }
+
+    public static String obtenerCadenaFinal(ArrayList<String> lista) {
+        String cadenaFinal = "";
+        for (int i = 0; i < lista.size(); i++) {
+            cadenaFinal = String.format("%s%s\n", cadenaFinal, lista.get(i));
+        }
+        return cadenaFinal;
+    }
+
+}
+/*ArrayList<String> arreglo2 = new ArrayList<>();
+        Scanner entrada = new Scanner(System.in);
+        String pais;
+        String opcion;
+        boolean bandera = true;
+        while (bandera) {
+            System.out.println("Ingrese el nombre de su pais");
+            pais = entrada.nextLine();
+            arreglo2.add(pais);
+            System.out.println("Si desa salir ingrese (s)");
+            opcion = entrada.nextLine();
+            if (opcion.equals("s")) {
+                bandera = false;
             }
+
+        }
         System.out.println("Presentar todos los valores ");
         for (int i = 0; i < arreglo2.size(); i++) {
             System.out.printf("%s\n", arreglo2.get(i));
-            
-        }
 
         }
-        
 
-        
     }
+
+}
 
 /*
         ArrayList <String> arreglo2 = new ArrayList<>();
         
         ArrayList <Boolean> arreglo4 = new ArrayList<>();
  */
-
